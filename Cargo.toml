@@ -1,0 +1,27 @@
+[package]
+name = "k8s-controller-rust"
+version = "0.1.0"
+edition = "2021"
+authors = ["Afshin Paydar <afshinpaydar@gmail.com>"]
+description = "A Kubernetes security controller written in Rust"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1.32", features = ["full"] }
+kube = { version = "0.87", features = ["runtime", "derive"] }
+k8s-openapi = { version = "0.20", features = ["v1_27"] }
+futures = "0.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_yaml = "0.9"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+warp = "0.3"
+anyhow = "1.0"
+thiserror = "1.0"
+async-trait = "0.1"
+
+[dev-dependencies]
+tokio-test = "0.4"
+assert_matches = "1.5"
